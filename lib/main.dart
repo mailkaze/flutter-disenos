@@ -1,3 +1,5 @@
+import 'package:disenos_flutter/src/screens/basic_design.dart';
+import 'package:disenos_flutter/src/screens/scroll_design.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,24 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: _TempHomScreen(),
-    );
-  }
-}
-
-class _TempHomScreen extends StatelessWidget {
-  const _TempHomScreen({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text('uno'),
-        Text('dos'),
-      ],
+      initialRoute: 'scroll_design',
+      routes: {
+        'basic_design': (_) => BasicDesignScreen(),
+        'scroll_design': (_) => ScrollDesignScreen(),
+      },
     );
   }
 }
